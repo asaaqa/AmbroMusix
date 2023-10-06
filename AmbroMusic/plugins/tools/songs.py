@@ -1,9 +1,9 @@
 #
 # Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
 #
-# This file is part of < https://github.com/TeamYukki/AmbroMusicBot > project,
+# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
 # and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/AmbroMusicBot/blob/master/LICENSE >
+# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
 #
 # All rights reserved.
 
@@ -12,6 +12,7 @@ import re
 
 import yt_dlp
 from pykeyboard import InlineKeyboard
+
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaAudio,
@@ -29,11 +30,8 @@ from AmbroMusic.utils.inline.song import song_markup
 SONG_COMMAND = get_command("SONG_COMMAND")
 
 
-
 @app.on_message(
-    filters.command(["SONG_COMMAND"]) | filters.command(["بحث","تنزيل"],prefixes= ["/",""])
-    & filters.group
-    & filters.private
+    filters.command(["SONG_COMMAND"]) | filters.command(["تنزيل","بحث"],prefixes= ["/",""])
     & ~filters.edited
     & ~BANNED_USERS
 )
