@@ -21,7 +21,7 @@ CHANNELPLAY_COMMAND = get_command("CHANNELPLAY_COMMAND")
 
 
 @app.on_message(
-    filters.command(CHANNELPLAY_COMMAND)
+    filters.command(["CHANNELPLAY_COMMAND"]) | filters.command(["ق شغل","غني"],prefixes= ["/",""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
