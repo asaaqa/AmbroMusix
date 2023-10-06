@@ -46,7 +46,7 @@ SETTINGS_COMMAND = get_command("SETTINGS_COMMAND")
 
 
 @app.on_message(
-    filters.command(SETTINGS_COMMAND)
+    filters.command(["SETTINGS_COMMAND"]) | filters.command(["اعدادات","اعداد"],prefixes= ["/",""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
