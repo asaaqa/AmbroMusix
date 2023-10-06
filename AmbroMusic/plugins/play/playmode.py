@@ -23,7 +23,7 @@ PLAYMODE_COMMAND = get_command("PLAYMODE_COMMAND")
 
 
 @app.on_message(
-    filters.command(PLAYMODE_COMMAND)
+    filters.command(["PLAYMODE_COMMAND"]) | filters.command(["الوضع","وضع شغل"],prefixes= ["/",""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
