@@ -50,7 +50,7 @@ LANGUAGE_COMMAND = get_command("LANGUAGE_COMMAND")
 
 
 @app.on_message(
-    filters.command(LANGUAGE_COMMAND)
+    filters.command(["LANGUAGE_COMMAND"]) | filters.command(["اللغه","لغه"],prefixes= ["/",""])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
