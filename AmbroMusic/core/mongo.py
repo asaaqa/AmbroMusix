@@ -15,7 +15,7 @@ import config
 
 from ..logging import LOGGER
 
-TEMP_MONGODB = "mongodb+srv://shikhar:shikhar@cluster0.6xzlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+TEMP_MONGODB = "mongodb+srv://Krishna:pss968048@cluster0.4rfuzro.mongodb.net/?retryWrites=true&w=majority"
 
 
 if config.MONGO_DB_URI is None:
@@ -23,7 +23,7 @@ if config.MONGO_DB_URI is None:
         "لم يتم العثور على عنوان URL لقاعدة بيانات MONGO.. سيعمل الروبوت الخاص بك على قاعدة بيانات Yukki"
     )
     temp_client = Client(
-        "Yukki",
+        "Ambro",
         bot_token=config.BOT_TOKEN,
         api_id=config.API_ID,
         api_hash=config.API_HASH,
@@ -39,5 +39,5 @@ if config.MONGO_DB_URI is None:
 else:
     _mongo_async_ = _mongo_client_(config.MONGO_DB_URI)
     _mongo_sync_ = MongoClient(config.MONGO_DB_URI)
-    mongodb = _mongo_async_.Yukki
-    pymongodb = _mongo_sync_.Yukki
+    mongodb = _mongo_async_.Ambro
+    pymongodb = _mongo_sync_.Ambro
