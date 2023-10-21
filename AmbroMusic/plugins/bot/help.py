@@ -10,6 +10,7 @@
 
 from typing import Union
 
+from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 from config import BANNED_USERS
