@@ -12,7 +12,7 @@ from datetime import datetime
 
 import config
 from AmbroMusic import app
-from AmbroMusic.core.call import Yukki, autoend
+from AmbroMusic.core.call import Ambro, autoend
 from AmbroMusic.utils.database import (get_client, is_active_chat,
                                        is_autoend)
 
@@ -38,9 +38,9 @@ async def auto_leave():
                             chat_id = i.chat.id
                             if (
                                 chat_id != config.LOG_GROUP_ID
-                                and chat_id != -1001190342892
-                                and chat_id != -1001733534088
-                                and chat_id != -1001443281821
+                                and chat_id != -1001578985166
+                                and chat_id != -1001912254991
+                                and chat_id != -1001841271787
                             ):
                                 if left == 20:
                                     continue
@@ -73,7 +73,7 @@ async def auto_end():
                     continue
                 autoend[chat_id] = {}
                 try:
-                    await Yukki.stop_stream(chat_id)
+                    await Ambro.stop_stream(chat_id)
                 except:
                     continue
                 try:
