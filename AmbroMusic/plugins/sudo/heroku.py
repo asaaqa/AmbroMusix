@@ -30,7 +30,7 @@ from AmbroMusic.utils.database import (get_active_chats,
                                        remove_active_chat,
                                        remove_active_video_chat)
 from AmbroMusic.utils.decorators.language import language
-from AmbroMusic.utils.pastebin import Yukkibin
+from AmbroMusic.utils.pastebin import Ambrobin
 
 # Commands
 GETLOG_COMMAND = get_command("GETLOG_COMMAND")
@@ -69,7 +69,7 @@ async def log_(client, message, _):
                     NUMB = 100
                 for x in lines[-NUMB:]:
                     data += x
-                link = await Yukkibin(data)
+                link = await Ambrobin(data)
                 return await message.reply_text(link)
             else:
                 return await message.reply_text(_["heroku_2"])
@@ -265,7 +265,7 @@ async def update_(client, message, _):
     _update_response_ = "<b>A new update is available for the Bot!</b>\n\n➣ Pushing Updates Now</code>\n\n**<u>Updates:</u>**\n\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
-        url = await Yukkibin(updates)
+        url = await Ambrobin(updates)
         nrs = await response.edit(
             f"<b>A new update is available for the Bot!</b>\n\n➣ Pushing Updates Now</code>\n\n**<u>Updates:</u>**\n\n[Click Here to checkout Updates]({url})"
         )
