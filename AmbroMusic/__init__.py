@@ -7,7 +7,7 @@
 #
 # All rights reserved.
 
-from AmbroMusic.core.bot import YukkiBot
+from AmbroMusic.core.bot import AmbroBot
 from AmbroMusic.core.dir import dirr
 from AmbroMusic.core.git import git
 from AmbroMusic.core.userbot import Userbot
@@ -31,7 +31,7 @@ heroku()
 sudo()
 
 # Bot Client
-app = YukkiBot()
+app = AmbroBot()
 
 # Assistant Client
 userbot = Userbot()
