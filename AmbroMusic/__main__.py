@@ -17,7 +17,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 import config
 from config import BANNED_USERS
 from AmbroMusic import LOGGER, app, userbot
-from AmbroMusic.core.call import Yukki
+from AmbroMusic.core.call import Ambro
 from AmbroMusic.plugins import ALL_MODULES
 from AmbroMusic.utils.database import get_banned_users, get_gbanned
 
@@ -61,7 +61,7 @@ async def init():
     await userbot.start()
     await Yukki.start()
     try:
-        await Yukki.stream_call(
+        await Ambro.stream_call(
             "http://docs.evostream.com/sample_content/assets/sintel1m720p.mp4"
         )
     except NoActiveGroupCall:
@@ -71,7 +71,7 @@ async def init():
         sys.exit()
     except:
         pass
-    await Yukki.decorators()
+    await Ambro.decorators()
     LOGGER("AmbroMusic").info("بدأ تشغيل Ambro Music Bot بنجاح")
     await idle()
 
