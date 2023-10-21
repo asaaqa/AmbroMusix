@@ -38,7 +38,7 @@ def AdminRightsCheck(mystic):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
         except:
-            _ = get_string("ar")
+            _ = get_string("en")
         if message.sender_chat:
             upl = InlineKeyboardMarkup(
                 [
@@ -95,7 +95,7 @@ def AdminActual(mystic):
             language = await get_lang(message.chat.id)
             _ = get_string(language)
         except:
-            _ = get_string("ar")
+            _ = get_string("en")
         if message.sender_chat:
             upl = InlineKeyboardMarkup(
                 [
