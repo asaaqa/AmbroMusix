@@ -10,7 +10,6 @@
 
 from typing import Union
 
-from strings.filters import command
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
