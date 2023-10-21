@@ -21,7 +21,7 @@ from config import BANNED_USERS, lyrical
 from strings import get_command
 from AmbroMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
-from AmbroMusic.core.call import Yukki
+from AmbroMusic.core.call import Ambro
 from AmbroMusic.utils import seconds_to_min, time_to_seconds
 from AmbroMusic.utils.channelplay import get_channeplayCB
 from AmbroMusic.utils.database import is_video_allowed
@@ -335,7 +335,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await Yukki.stream_call(url)
+                await Ambro.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
                     "There's an issue with the bot. Please report it to my owner and ask them to check logger group."
