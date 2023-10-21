@@ -15,7 +15,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL
 from strings import get_command
 from AmbroMusic import app
-from AmbroMusic.core.call import Yukki
+from AmbroMusic.core.call import Ambro
 from AmbroMusic.utils import bot_sys_stats
 from AmbroMusic.utils.decorators.language import language
 
@@ -36,7 +36,7 @@ async def ping_com(client, message: Message, _):
         caption=_["ping_1"],
     )
     start = datetime.now()
-    pytgping = await Yukki.ping()
+    pytgping = await Ambro.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(
