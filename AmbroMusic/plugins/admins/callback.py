@@ -230,7 +230,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     _["admin_10"].format(mention)
                 )
                 try:
-                    return await Yukki.stop_stream(chat_id)
+                    return await Ambro.stop_stream(chat_id)
                 except:
                     return
         except:
@@ -330,7 +330,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await CallbackQuery.edit_message_text(txt)
         else:
             try:
-                await Yukki.skip_stream(chat_id, queued, video=status)
+                await Ambro.skip_stream(chat_id, queued, video=status)
             except Exception:
                 return await CallbackQuery.message.reply_text(
                     _["call_9"]
