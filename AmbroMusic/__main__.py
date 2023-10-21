@@ -59,7 +59,7 @@ async def init():
         "Successfully Imported Modules "
     )
     await userbot.start()
-    await Yukki.start()
+    await Ambro.start()
     try:
         await Ambro.stream_call(
             "http://docs.evostream.com/sample_content/assets/sintel1m720p.mp4"
