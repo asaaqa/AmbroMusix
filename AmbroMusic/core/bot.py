@@ -14,7 +14,6 @@ class AmbroBot(Client):
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
-            in_memory=True,
             parse_mode=ParseMode.HTML,
             max_concurrent_transmissions=7,
         )
@@ -43,7 +42,7 @@ class AmbroBot(Client):
             exit()
 
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
-        if a.status != ChatMemberStatus.ADMINISTRATOR:
+        if a.status != "administrator":
             LOGGER(__name__).error(
                 "Please promote your bot as an admin in your log group/channel."
             )
