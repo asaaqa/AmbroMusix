@@ -30,7 +30,7 @@ class AmbroBot(Client):
                 chat_id=config.LOG_GROUP_ID,
                 text=f"تمت إضافة الميوزك الله يلعنه",
             )
-        except (errors.ChannelInvalid, errors.PeerIdInvalid):
+        except:
             LOGGER(__name__).error(
                 "Bot has failed to access the log group/channel. Make sure that you have added your bot to your log group/channel."
             )
