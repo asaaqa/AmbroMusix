@@ -28,7 +28,7 @@ class AmbroBot(Client):
 
         try:
             await self.send_message(
-                chat_id=config.LOGGER_ID,
+                chat_id=config.LOG_GROUP_ID,
                 text=f"تمت إضافة الميوزك الله يلعنه",
             )
         except (errors.ChannelInvalid, errors.PeerIdInvalid):
@@ -42,7 +42,7 @@ class AmbroBot(Client):
             )
             exit()
 
-        a = await self.get_chat_member(config.LOGGER_ID, self.id)
+        a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
         if a.status != ChatMemberStatus.ADMINISTRATOR:
             LOGGER(__name__).error(
                 "Please promote your bot as an admin in your log group/channel."
